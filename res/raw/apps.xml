@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<main>
+    <application>
+        <id>1</id>    
+        <appName>Lookout</appName>
+        <vendor>Lookout</vendor>
+        <appVersion>9.9.5-e9</appVersion>
+        <appPackage>com.lookout</appPackage>
+		<icon>R.drawable.lookout</icon>
+    </application>
+	<application>
+        <id>2</id>    
+        <appName>Sprint ID</appName>
+        <vendor>Sprint</vendor>
+        <appVersion></appVersion>
+        <appPackage>com.sprint.w.installer</appPackage>
+		<icon></icon>
+    </application>
+	<application>
+        <id>3</id>    
+        <appName>Sprint Zone and Fun Games</appName>
+        <vendor>Sprint</vendor>
+        <appVersion></appVersion>
+        <appPackage>com.sprint.zone</appPackage>
+		<icon></icon>
+    </application>
+	<application>
+        <id>4</id>    
+        <appName>ebay</appName>
+        <vendor>Ebay</vendor>
+        <appVersion></appVersion>
+        <appPackage>com.ebay.mobile</appPackage>
+		<icon></icon>
+    </application>
+	<application>
+        <id>5</id>    
+        <appName>Smart Device Mgr</appName>
+        <vendor>Location Labs</vendor>
+        <appVersion></appVersion>
+        <appPackage></appPackage>
+		<icon></icon>
+    </application>
+	<application>
+        <id>6</id>    
+        <appName>TEB(its On Kernel)</appName>
+        <vendor>ItsOn</vendor>
+        <appVersion></appVersion>
+        <appPackage></appPackage>
+		<icon></icon>
+    </application>
+	<application>
+        <id>7</id>    
+        <appName>Visual Voicemail</appName>
+        <vendor>Smith Micro</vendor>
+        <appVersion></appVersion>
+        <appPackage></appPackage>
+		<icon></icon>
+    </application>
+	<application>
+        <id>8</id>    
+        <appName>Wi-Fi calling VOWi-Fi</appName>
+        <vendor>Kineto</vendor>
+        <appVersion></appVersion>
+        <appPackage></appPackage>
+		<icon></icon>
+    </application>	
+	<application>
+        <id>9</id>    
+        <appName>Connections optimizer</appName>
+        <vendor>Smith Micro</vendor>
+        <appVersion></appVersion>
+        <appPackage></appPackage>
+		<icon></icon>
+    </application>
+	<application>
+        <id>10</id>    
+        <appName>DSS</appName>
+        <vendor>Sprint</vendor>
+        <appVersion></appVersion>
+        <appPackage></appPackage>
+		<icon></icon>
+    </application>
+	<application>
+        <id>11</id>    
+        <appName>Hotspot application/support</appName>
+        <vendor></vendor>
+        <appVersion></appVersion>
+        <appPackage></appPackage>
+		<icon></icon>
+    </application>
+	<application>
+        <id>12</id>    
+        <appName>Sprint Installer</appName>
+        <vendor>Sprint</vendor>
+        <appVersion>5.0.0</appVersion>
+        <appPackage></appPackage>
+		<icon></icon>
+    </application>
+</main>
