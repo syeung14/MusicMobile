@@ -12,6 +12,7 @@
 			</intent-filter>
 		</activity>
 		<activity android:name=".CustomizedListView"/>
+		<activity android:name=".SearchView"/>
 		<activity android:name=".SystemInfoView"/>
 	</application>
 	

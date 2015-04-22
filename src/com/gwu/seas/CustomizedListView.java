@@ -21,14 +21,11 @@ import android.widget.ListView;
 
 public class CustomizedListView extends Activity {
 	// XML node keys
-	static final String KEY_USER = "user"; // parent node
-	static final String KEY_CREATETIME = "createTime";
-	static final String KEY_ISADMIN = "isAdmin";
-	static final String KEY_LOGINCOUNT = "loginCount";
-	static final String KEY_PASSWORD = "password";
-	static final String KEY_USEREMAIL = "userEmail";
-	static final String KEY_USERID = "userId";
-	static final String KEY_USERNAME = "userName";
+	static final String MUSIC = "music"; // parent node
+	static final String ARTIST = "artist";
+	static final String NAME = "name";
+	static final String DURATION = "duration";
+	static final String KEY_RES = "resource";
 
 	ListView list;
 	LazyAdapter adapter;
@@ -37,30 +34,30 @@ public class CustomizedListView extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.softwaretab);
+		Intent intent = getIntent();
+		Bundle bundle = intent.getExtras();
+		String url = bundle.getString("url");
 
 		final ArrayList<HashMap<String, String>> appsList = new ArrayList<HashMap<String, String>>();
 
 		XMLParser parser = new XMLParser();
-		String url = "http://192.168.1.5:8080/MusicCMS/rest/user/greatwall/1234";
+		final String baseURL = "http://musiccms.cloudapp.net:8080/MusicCMS";
+		//String url = baseURL+"/rest/music";//"http://http://musiccms.cloudapp.net:8080/MusicCMS/rest/user/greatwall/1234";
 		String xml = parser.getXmlFromUrl(url); // getting XML from URL
 
 		Document doc = parser.getDomElement(xml); // getting DOM element
 
-		NodeList nl = doc.getElementsByTagName(KEY_USER);
+		NodeList nl = doc.getElementsByTagName(MUSIC);
 		// looping through all nodes
 		for (int i = 0; i < nl.getLength(); i++) {
 			// creating new HashMap
 			HashMap<String, String> map = new HashMap<String, String>();
 			Element e = (Element) nl.item(i);
 			// adding each child node to HashMap key => value
-			map.put(KEY_CREATETIME, parser.getValue(e, KEY_CREATETIME));
-			map.put(KEY_ISADMIN, parser.getValue(e, KEY_ISADMIN));
-			map.put(KEY_LOGINCOUNT, parser.getValue(e, KEY_LOGINCOUNT));
-			map.put(KEY_PASSWORD, parser.getValue(e, KEY_PASSWORD));
-			map.put(KEY_USEREMAIL, parser.getValue(e, KEY_USEREMAIL));
-			map.put(KEY_USERID, parser.getValue(e, KEY_USERID));
-			map.put(KEY_USERNAME, parser.getValue(e, KEY_USERNAME));
-			// adding HashList to ArrayList
+			map.put(ARTIST, parser.getValue(e, ARTIST));
+			map.put(NAME, parser.getValue(e, NAME));
+			map.put(DURATION, parser.getValue(e, DURATION));
+			map.put(KEY_RES, parser.getValue(e, KEY_RES));
 			appsList.add(map);
 		}
 
@@ -80,7 +77,7 @@ public class CustomizedListView extends Activity {
 					int position, long id) {
 				HashMap<String, String> map = appsList.get(position);
 				try {
-					String url=map.get(KEY_USEREMAIL);
+					String url=baseURL+map.get(KEY_RES);
 					String extension = MimeTypeMap.getFileExtensionFromUrl(url);
 					String mimeType = MimeTypeMap.getSingleton().getMimeTypeFromExtension(extension);
 					Intent mediaIntent = new Intent(Intent.ACTION_VIEW);

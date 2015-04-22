@@ -51,10 +51,10 @@ public class LazyAdapter extends BaseAdapter {
         app = data.get(position);
         
         // Setting all values in listview
-        title.setText(app.get(CustomizedListView.KEY_USER));
-        artist.setText(app.get(CustomizedListView.KEY_CREATETIME));
-        duration.setText(app.get(CustomizedListView.KEY_ISADMIN));      
-        imageLoader.DisplayImage(app.get(CustomizedListView.KEY_LOGINCOUNT), thumb_image);
+        title.setText(app.get(CustomizedListView.NAME));
+        artist.setText(app.get(CustomizedListView.ARTIST));
+        duration.setText(app.get(CustomizedListView.DURATION));      
+        //imageLoader.DisplayImage(app.get(CustomizedListView.KEY_LOGINCOUNT), thumb_image);
         return vi;
     }
 }

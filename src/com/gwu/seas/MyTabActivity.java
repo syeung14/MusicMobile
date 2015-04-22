@@ -20,12 +20,12 @@ public class MyTabActivity extends TabActivity {
 		String info;
 		
 		//two tabs
-		intent=new Intent().setClass(this,SystemInfoView.class);
+		intent=new Intent().setClass(this,SearchView.class);
 		info=getString(R.string.sysinfo);
 		spec = tabHost.newTabSpec(info).setIndicator(info).setContent(intent);
 		tabHost.addTab(spec);
 		
-		intent=new Intent().setClass(this,CustomizedListView.class);
+		intent=new Intent().setClass(this,SearchView.class);
 		info=getString(R.string.softwareinfo);
 		spec = tabHost.newTabSpec(info).setIndicator(info).setContent(intent);
 		tabHost.addTab(spec);
