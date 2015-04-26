@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <LinearLayout   xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"        
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="#eee" >
+
+
+        <TableLayout
+			android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center" >
+            
+            <TableRow>
+				<TextView android:text="User Name:" android:textColor="#000000"
+					android:textSize="15sp"
+					android:textStyle="bold" android:gravity="right" android:padding="8dip"
+					android:id="@+id/view_uname"/>
+				<EditText android:id="@+id/uname"
+					android:padding="3dip" android:scrollHorizontally="true" android:ems="8"/>
+			</TableRow>
+	
+			<TableRow>
+				<TextView android:text="Password:" android:textColor="#000000"
+					android:textSize="15sp"
+					android:textStyle="bold" android:gravity="right" android:padding="8dip" />
+				<EditText
+         			android:id="@+id/passwd"
+         			android:layout_width="match_parent"
+         			android:layout_height="wrap_content"
+         			android:ems="8"
+         			android:scrollHorizontally="true"
+         			android:inputType="textPassword" />
+			</TableRow>
+        </TableLayout>
+
+        
+
+        
+        <Button
+            android:id="@+id/main_login_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingLeft="130dp"
+            android:paddingRight="130dp"
+            android:layout_marginTop="10dp"
+            android:text="Login"
+            android:textSize="18sp"
+            android:onClick="welcome_login" />
+        <Button
+            android:id="@+id/main_register_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingLeft="119dp"
+            android:paddingRight="119dp"
+            android:layout_marginTop="10dp"
+            android:text="Sign Up"
+            android:textSize="18sp"
+            android:onClick="welcome_register" />          
+         <Button
+            android:id="@+id/main_exit_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:paddingLeft="130dp"
+            android:paddingRight="130dp"
+            android:text="Exit"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:onClick="welcome_exit"  />
+    </LinearLayout>

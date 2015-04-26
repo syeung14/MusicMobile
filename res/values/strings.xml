@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="sysinfo">System Information</string>
-    <string name="softwareinfo">Software Information</string>
+    <string name="search">Search</string>
+    <string name="favorite">Favorite List</string>
     <string name="app_name">My Music Player</string>
+    <string name="profile">User Profile</string>
 </resources>

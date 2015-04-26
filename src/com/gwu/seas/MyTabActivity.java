@@ -19,14 +19,19 @@ public class MyTabActivity extends TabActivity {
 		Intent intent;
 		String info;
 		
-		//two tabs
+		//3 tabs
 		intent=new Intent().setClass(this,SearchView.class);
-		info=getString(R.string.sysinfo);
+		info=getString(R.string.search);
 		spec = tabHost.newTabSpec(info).setIndicator(info).setContent(intent);
 		tabHost.addTab(spec);
 		
 		intent=new Intent().setClass(this,SearchView.class);
-		info=getString(R.string.softwareinfo);
+		info=getString(R.string.favorite);
+		spec = tabHost.newTabSpec(info).setIndicator(info).setContent(intent);
+		tabHost.addTab(spec);
+		
+		intent=new Intent().setClass(this,SearchView.class);
+		info=getString(R.string.profile);
 		spec = tabHost.newTabSpec(info).setIndicator(info).setContent(intent);
 		tabHost.addTab(spec);
 		
