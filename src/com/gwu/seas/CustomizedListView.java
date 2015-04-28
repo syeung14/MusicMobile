@@ -17,6 +17,7 @@ import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.BaseAdapter;
 import android.widget.ListView;
 
 public class CustomizedListView extends Activity {
@@ -26,10 +27,22 @@ public class CustomizedListView extends Activity {
 	static final String NAME = "name";
 	static final String DURATION = "duration";
 	static final String KEY_RES = "resource";
+	static final int LAZY_ADAPTER = 1;
+	static final int MORE_LAZY_ADAPTER = 2;
+	static final int ADAPTER_THRESHOLD = 3;
 
 	ListView list;
-	LazyAdapter adapter;
-
+	//LazyAdapter adapter;
+	static class AdapterFactory{
+	      public static BaseAdapter adapterCreate(int type, Activity a, ArrayList<HashMap<String, String>> appsList){
+	           if(type==LAZY_ADAPTER){
+	                  return new LazyAdapter(a, appsList);
+	           }else if(type==MORE_LAZY_ADAPTER){
+	                 return new MoreLazyAdapter(a, appsList);
+	           }
+	           return new LazyAdapter(a, appsList);
+	     }
+	 }
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -64,7 +77,8 @@ public class CustomizedListView extends Activity {
 		list = (ListView) findViewById(R.id.list);
 		
 		// Getting adapter by passing xml data ArrayList
-		adapter = new LazyAdapter(this, appsList);
+		int adapterType = nl.getLength()>ADAPTER_THRESHOLD?MORE_LAZY_ADAPTER:LAZY_ADAPTER;
+		BaseAdapter adapter = AdapterFactory.adapterCreate(adapterType, this, appsList);
 		list.setAdapter(adapter);
 		
 		
