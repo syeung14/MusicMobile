@@ -24,12 +24,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class SignActivity extends Activity {
+public class SignActivity extends Activity implements Properties{
 	private EditText mNameText = null;
 	private EditText mPasswdText = null;
-	private String baseURL = "http://musiccms.cloudapp.net:8080/MusicCMS/rest/user/";
-	private static final String CONTENT = "content";
-	private static final String UNAME = "userName";
+	
 	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -54,7 +52,7 @@ public class SignActivity extends Activity {
         
         try{
         	HttpEntity requestHttpEntity = new UrlEncodedFormEntity(pairList);
-        	HttpPost httpPost = new HttpPost(baseURL+"login");
+        	HttpPost httpPost = new HttpPost(userBaseURL+"login");
         	httpPost.setEntity(requestHttpEntity);
         	HttpClient httpClient = new DefaultHttpClient();
         	httpClient.getParams().setParameter(CoreConnectionPNames.CONNECTION_TIMEOUT, 20000);
@@ -98,7 +96,7 @@ public class SignActivity extends Activity {
         
         try{
         	HttpEntity requestHttpEntity = new UrlEncodedFormEntity(pairList);
-        	HttpPost httpPost = new HttpPost(baseURL+"register");
+        	HttpPost httpPost = new HttpPost(userBaseURL+"register");
         	httpPost.setEntity(requestHttpEntity);
         	HttpClient httpClient = new DefaultHttpClient();
         	httpClient.getParams().setParameter(CoreConnectionPNames.CONNECTION_TIMEOUT, 20000);

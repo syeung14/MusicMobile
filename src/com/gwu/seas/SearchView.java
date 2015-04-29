@@ -29,13 +29,7 @@ import android.widget.TabHost;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.TabHost.TabSpec;
 
-public class SearchView extends Activity {
-	private static final String MUSIC = "music"; // parent node
-	private static final String ARTIST = "artist";
-	private static final String NAME = "name";
-	private static final String DURATION = "duration";
-	private static final String KEY_RES = "resource";
-	private static final String[] cat={"All","Pop","Country","R&B","Rock","Classic", "Other"};
+public class SearchView extends Activity implements Properties{
 	
     private EditText mNameText = null;
     private EditText mArtistText = null;
@@ -46,12 +40,7 @@ public class SearchView extends Activity {
     private ArrayAdapter<String> arradapter;
     private Button getButton = null;
     private String selectedCat = "";
-
-    private ListView ResultList = null;
-    private LazyAdapter lzadapter;
     
-    private String baseURL = "http://musiccms.cloudapp.net:8080/MusicCMS/rest/music/search";//+"/rest/music"
-    private final String baseResURL = "http://musiccms.cloudapp.net:8080/MusicCMS";
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -104,39 +93,39 @@ public class SearchView extends Activity {
 	            String pace = mPaceText.getText().toString();
 	            String year = mYearText.getText().toString();
 	            
-	            String url = baseURL+"?";
+	            String url = searchBaseURL+"?";
 	            boolean flag = false;
 	            if(name!=null && !"".equals(name)){
-	            	url += "name=" + name;
+	            	url += NAME + "=" + name;
 	            	flag = true;
 	            }
 	            if(artist!=null && !"".equals(artist)){
-	            	url += flag?"&artist=":"artist=";
+	            	url += flag?("&"+ARTIST+"="):(ARTIST+"=");
 	            	url += artist;
 	            	flag = true;
 	            }
 	            if(album!=null && !"".equals(album)){
-	            	url += flag?"&album=":"album=";
+	            	url += flag?("&"+ALBUM+"="):(ALBUM+"=");
 	            	url += album;
 	            	flag = true;
 	            }
 	            if(pace!=null && !"".equals(pace)){
-	            	url += flag?"&pace=":"pace=";
+	            	url += flag?("&"+PACE+"="):(PACE+"=");
 	            	url += pace;
 	            	flag = true;
 	            }
 	            if(year!=null && !"".equals(year)){
-	            	url += flag?"&year=":"year=";
+	            	url += flag?("&"+YEAR+"="):(YEAR+"=");
 	            	url += year;
 	            	flag = true;
 	            }
 	            if(selectedCat!=null && !"".equals(selectedCat) && !"All".equals(selectedCat)){
-	            	url += flag?"&category=":"category=";
+	            	url += flag?("&"+CATEGORY+"="):(CATEGORY+"=");
 	            	url += URLEncoder.encode(selectedCat,"UTF-8");
 	            	flag = true;
 	            }
 	            Log.i("http", "GET request");
-	            //String url = baseURL + "?username=" + name + "&age=" + age;
+	            //String url = searchBaseURL + "?username=" + name + "&age=" + age;
 	            showResponseResult(url);
 			} catch (UnsupportedEncodingException e) {
 				// TODO Auto-generated catch block

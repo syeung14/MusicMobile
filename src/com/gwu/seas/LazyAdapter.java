@@ -16,13 +16,12 @@ public class LazyAdapter extends BaseAdapter {
     private Activity activity;
     private ArrayList<HashMap<String, String>> data;
     private static LayoutInflater inflater=null;
-    public ImageLoader imageLoader; 
     
     public LazyAdapter(Activity a, ArrayList<HashMap<String, String>> d) {
         activity = a;
         data=d;
         inflater = (LayoutInflater)activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        imageLoader=new ImageLoader(activity.getApplicationContext());
+        //imageLoader=new ImageLoader(activity.getApplicationContext());
     }
 
     public int getCount() {
@@ -45,7 +44,7 @@ public class LazyAdapter extends BaseAdapter {
         TextView title = (TextView)vi.findViewById(R.id.title); 
         TextView artist = (TextView)vi.findViewById(R.id.artist); 
         TextView duration = (TextView)vi.findViewById(R.id.duration); 
-        ImageView thumb_image=(ImageView)vi.findViewById(R.id.list_image); 
+        //ImageView thumb_image=(ImageView)vi.findViewById(R.id.list_image); 
         
         HashMap<String, String> app = new HashMap<String, String>();
         app = data.get(position);
