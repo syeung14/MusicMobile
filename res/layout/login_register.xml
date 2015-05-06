@@ -1,19 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
- <LinearLayout   xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/linearLayout1"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"        
-        android:gravity="center"
-        android:orientation="vertical"
-        android:background="#eee" >
+ <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:id="@+id/linearLayout1"
+     android:layout_width="fill_parent"
+     android:layout_height="fill_parent"
+     android:background="#eee"
+     android:gravity="center_horizontal|center"
+     android:orientation="vertical" >
 
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginBottom="25dp" >
+
+         <TextView
+             android:id="@+id/textView1"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginLeft="20dp"
+             android:text="Team 6 Demo App"
+             android:textAppearance="?android:attr/textAppearanceLarge"
+             android:textSize="30sp"
+             android:textColor="#000000"
+             android:textStyle="bold|italic"
+             android:typeface="normal" />
+
+     </LinearLayout>
 
         <TableLayout
 			android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center" >
+            android:gravity="center_horizontal" >
             
-            <TableRow>
+            <TableRow android:gravity="center_horizontal" >
+
 				<TextView android:text="User Name:" android:textColor="#000000"
 					android:textSize="15sp"
 					android:textStyle="bold" android:gravity="right" android:padding="8dip"
@@ -22,7 +41,8 @@
 					android:padding="3dip" android:scrollHorizontally="true" android:ems="8"/>
 			</TableRow>
 	
-			<TableRow>
+			<TableRow android:gravity="center_horizontal" >
+
 				<TextView android:text="Password:" android:textColor="#000000"
 					android:textSize="15sp"
 					android:textStyle="bold" android:gravity="right" android:padding="8dip" />
@@ -36,41 +56,45 @@
 			</TableRow>
         </TableLayout>
 
-        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="10dp"
+            android:gravity="center_horizontal" >
 
-        
+            <Button
+                android:id="@+id/main_login_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:onClick="welcome_login"
+                android:text="Sign in"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/main_register_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:onClick="welcome_register"
+                android:text="Sign up"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
         <Button
-            android:id="@+id/main_login_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:paddingLeft="130dp"
-            android:paddingRight="130dp"
-            android:layout_marginTop="10dp"
-            android:text="Login"
-            android:textSize="18sp"
-            android:onClick="welcome_login" />
-        <Button
-            android:id="@+id/main_register_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:paddingLeft="119dp"
-            android:paddingRight="119dp"
-            android:layout_marginTop="10dp"
-            android:text="Sign Up"
-            android:textSize="18sp"
-            android:onClick="welcome_register" />          
-         <Button
             android:id="@+id/main_exit_btn"
-            android:layout_width="wrap_content"
+            android:layout_width="78dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="100dp"
             android:gravity="center"
-            android:paddingLeft="130dp"
-            android:paddingRight="130dp"
+            android:onClick="welcome_exit"
             android:text="Exit"
             android:textColor="#000000"
-            android:textSize="18sp"
-            android:onClick="welcome_exit"  />
+            android:textSize="18sp" />
+
     </LinearLayout>

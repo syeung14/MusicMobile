@@ -12,9 +12,9 @@ public interface Properties {
 	static final String CATEGORY = "category";
 	static final int ADAPTER_THRESHOLD = 3;
 	
-	final String baseURL = "http://musiccms.cloudapp.net:8080/MusicCMS";
-	final String userBaseURL = "http://musiccms.cloudapp.net:8080/MusicCMS/rest/user/";
-	final String searchBaseURL = "http://musiccms.cloudapp.net:8080/MusicCMS/rest/music/search";
+	final String baseURL = "http://192.168.1.2:8080/MusicCMS";
+	final String userBaseURL = "http://192.168.1.2:8080/MusicCMS/rest/user/";
+	final String searchBaseURL = "http://192.168.1.2:8080/MusicCMS/rest/music/search";
 	
 	static final int LAZY_ADAPTER = 1;
 	static final int MORE_LAZY_ADAPTER = 2;
